@@ -1,0 +1,226 @@
+
+:root{
+    --primary:#e94a3e;
+    --light:#eee;
+    --gray: #666;
+    --gray-light:#999;
+    --primary-light: #ababe6;
+    --menu-color:#ee645a;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    height: 60px;
+    background: -webkit-linear-gradient(left, var(--primary), #f5afaa, var(--primary-light));
+    display: flex;
+    /* Elementos fixed z-index: 10;
+    position: relative;  */
+    z-index: 10;
+    position: relative;
+    
+}
+
+.header__logo{
+    display: flex;
+    /* Importante  no olvidar la latura  */
+    height: 100%;
+    width: 300px;
+    justify-content: center;
+    /* background-color: tomato;  para verificar el espacio */
+    align-items: center;
+    
+}
+.header__logo img{
+    height: 50%;
+    margin-right: 20px ;
+}
+.header__logo p{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    
+}
+.header__nav{
+    flex: 1;
+    /* background-color: tomato;  */
+}
+.header__list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    /* background-color: #801907; */
+}
+.header__item{
+    flex: 1;
+    /* background-color: #dfe241; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;  
+    cursor: pointer;
+}
+.header__item:hover{
+    flex:2;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header__item:hover .header__link{
+    font-size: 30px;
+}
+
+.header__link{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.main{
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.main__menu{
+    width: 220px;
+    /* height: calc(100vh - 60px); */
+    background-color: var(--menu-color);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    z-index: 0;
+}
+.main__list{
+    list-style: none;
+    
+}
+.main__item{
+    height: 30px;
+    background-color: #ec4539;
+    border-bottom: 1px solid var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.main__item:hover{
+    background-color: #f39a94 ;
+}
+.main__item i{
+    margin-right: 15px;
+    
+}
+.main__container{
+    /* flex: 1; */
+    width: cacl(100% - 220px);
+    margin-left: 220px;
+    background-color: #eee;
+    display: flex;
+    /* Importante para que no colapcen los hojos sino sean concecutivos  */
+    flex-wrap: wrap;
+    /* Centrar  */
+    justify-content: center;
+}
+
+.card{
+    width: 300px;
+    background-color: white;
+    cursor: pointer;
+    margin: 10px ;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: #aaa 0px 0px 8px;
+    transition: all 0.5 ease;
+}
+
+.card:hover{
+    transform: scale(1.05, 1.05);
+    box-shadow: #aaa 0px 0px 20px; 
+}
+.card:hover .card__description{
+    height: 90px;
+}
+.card:hover .card__header{
+    height: 200px;
+}
+.card:hover .card__img{
+    filter: brightness(0.8);
+    transform: scale(1.1,1.1);
+}
+.card__header{
+    position: relative;
+    height: 300px;
+
+    /* Todo lo que supere el padre oculta del hijo */
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.card__img{
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.card__photos{
+    padding: 4px 8px;
+    /* Colocar las variables de :root */
+    background-color: var(--primary);
+    color: var(--light);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.card__date{
+    background-color: var(--primary);
+    color: var(--light);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    padding-top: 5px;
+}
+.card__body{
+    padding: 20px;
+}
+.card__title{
+    /* mb: emmet */
+    margin-bottom: 10px;
+}
+.card__subtitle{
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+.card__description{
+    /* el tamaño por defecto 16px */
+    font-size: 13px;
+    /* espacio entre linea y linea */
+    line-height:22px;
+    /* Ocultar */
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.card__footer{
+    padding: 10px 20px;
+}
+.card__feed{
+    list-style: none;
+}
+.card__item{
+    display: inline-block;
+    font-size: 13px;
+    color: var(--gray-light);
+    margin-right: 15px;
+}
+
